@@ -5,13 +5,17 @@ require('folder/bootstrap.php');
 if(isset($_POST['save'])){
   $post_title = $_POST['post_title'];
   $post = $_POST['post'];
-  $query = mysqli_query($con,"INSERT INTO post (post_title,post) VALUES('$post_title','$post')");
+  $id = $_GET['id'];
+  $query = mysqli_query($con,"UPDATE post SET post_title='$post_title' , post='$post' WHERE id='$id'");
   if($query){
     // echo "<script>alert('Post Successful');</script>";
     $query2 = mysqli_query($con,"SELECT * FROM post ORDER BY ID DESC LIMIT 1");
     $array = mysqli_fetch_array($query2);
     header("Location:post.php?id=".$array['id']);
+  }else{
+    echo "What happened";
   }
+
 }
  ?>
 <!DOCTYPE html>
@@ -25,6 +29,11 @@ if(isset($_POST['save'])){
   </head>
   <body>
     <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <?php require("menu_bar.php"); ?>
+        </div>
+      </div>
       <?php
         $id=$_GET['id'];
         $query= mysqli_query($con, "SELECT * FROM post WHERE id='$id'");

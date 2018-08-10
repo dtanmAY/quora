@@ -16,7 +16,7 @@ require('folder/bootstrap.php');
 
     <?php require("menu_bar.php"); ?>
 
-    <h1 class="text-center related-text">POSTS</h1>
+    <h1 class="text-center related-text">All POSTS</h1>
 
      <div class="row">
 

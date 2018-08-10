@@ -121,7 +121,7 @@ if (isset($_POST['img'])){
             <a href="post.php?id=<?php echo $post_id[1]; ?>">
             <div class="img-box">
               <?php
-                if ($img[1] === true) {
+                if ($img[1] == true) {
                   echo '<img src="uploads/'.$img[1].'" style="width:100%;" alt="">';
                 }else {
                   echo '<img src="assets/img/640x480.png" style="width:100%;" alt="">';
@@ -137,23 +137,44 @@ if (isset($_POST['img'])){
           <div class="col-sm-6">
             <a href="post.php?id=<?php echo $post_id[2]; ?>">
             <div class="img-box2">
-              <img src="uploads/<?php echo $img[2]; ?>" style="width:100%;" alt="">
-              <p><?php echo $post_title[2]; ?></p>
+              <?php
+                  if ($img[2] == true) {
+                    echo '<img src="uploads/'.$img[2].'" style="width:100%;" alt="">';
+                  }else {
+                    echo '<img src="assets/img/640x480.png" style="width:100%;" alt="">';
+
+                  }
+               ?>
+                <p><?php echo $post_title[2]; ?></p>
             </div>
           </a>
           </div>
             <div class="col-sm-6">
                 <a href="post.php?id=<?php echo $post_id[3]; ?>">
               <div class="img-box2">
-                <img src="uploads/<?php echo $img[3]; ?>" style="width:100%;" alt="">
-                <p><?php echo $post_title[3]; ?></p>
+              <?php
+                if ($img[3] == true) {
+                  echo '<img src="uploads/'.$img[3].'" style="width:100%;" alt="">';
+                }else {
+                  echo '<img src="assets/img/640x480.png" style="width:100%;" alt="">';
+
+                }
+               ?>
+               <p><?php echo $post_title[3]; ?></p>
               </div>
             </a>
             </div>
               <div class="col-sm-6">
                   <a href="post.php?id=<?php echo $post_id[4]; ?>">
                 <div class="img-box2">
-                  <img src="uploads/<?php echo $img[4]; ?>" style="width:100%;" alt="">
+                  <?php
+                    if ($img[4] == true) {
+                      echo '<img src="uploads/'.$img[4].'" style="width:100%;" alt="">';
+                    }else {
+                      echo '<img src="assets/img/640x480.png" style="width:100%;" alt="">';
+
+                    }
+                  ?>
                   <p><?php echo $post_title[4]; ?></p>
                 </div>
               </a>
@@ -161,8 +182,15 @@ if (isset($_POST['img'])){
                 <div class="col-sm-6">
                     <a href="post.php?id=<?php echo $post_id[5]; ?>">
                   <div class="img-box2">
-                    <img src="uploads/<?php echo $img[5]; ?>" style="width:100%;" alt="">
-                    <p><?php echo $post_title[5]; ?></p>
+                  <?php
+                    if ($img[5] == true) {
+                      echo '<img src="uploads/'.$img[5].'" style="width:100%;" alt="">';
+                    }else {
+                      echo '<img src="assets/img/640x480.png" style="width:100%;" alt="">';
+
+                    }
+                  ?>                    
+               <p><?php echo $post_title[5]; ?></p>
                   </div>
                 </a>
                 </div>
@@ -172,7 +200,7 @@ if (isset($_POST['img'])){
   </div>
 
 <!-- end of related post -->
-
+<hr>
 
 <!-- Edit post comment -->
        <div class="row">
